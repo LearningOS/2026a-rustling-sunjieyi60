@@ -5,11 +5,14 @@
 // Execute `rustlings hint lifetimes3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-struct Book {
-    author: &str,
-    title: &str,
+// In Rust, a reference is basically a borrow.
+// Its lifetime is tied to the owner of the data it points to.
+// If the owner goes out of scope, the reference becomes invalid.
+// So we use lifetimes to express how long a reference is valid.
+struct Book<'a> {
+    author: &'a str,
+    title: &'a str,
 }
 
 fn main() {
